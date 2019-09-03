@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="827.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="506.0" prefWidth="416.0" style="-fx-background-color: #093dfe;">
+         <children>
+            <Label layoutX="177.0" layoutY="206.0" text="AMGEN" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="68.0" fitWidth="86.0" layoutX="175.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/iconCalender.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="110.0" layoutY="229.0" text="Viva sem se preocupar" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="68.0" fitWidth="86.0" layoutX="593.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/iconCalender1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="114.0" layoutY="272.0" text="MELHOR MANEIRA DE GERENCIMENTO" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="483.0" layoutY="282.0" text="Esqueceu a senha?" textFill="#5383ff">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="727.0" layoutY="478.0" text="DOWNLOAD APP" textFill="#5383ff">
+         <font>
+            <Font name="Segoe UI" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="433.0" layoutY="478.0" text="CADASTRE-SE" textFill="#5383ff">
+         <font>
+            <Font name="Segoe UI" size="11.0" />
+         </font>
+      </Label>
+      <Separator layoutX="492.0" layoutY="332.0" prefHeight="4.0" prefWidth="275.0" />
+      <Label layoutX="619.0" layoutY="326.0" text="Ou" textFill="#5383ff">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="682.0" layoutY="270.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="86.0" styleClass="butoon" stylesheets="@viewlogin.css" text="Entrar" />
+      <Button layoutX="490.0" layoutY="382.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="275.0" styleClass="butoonEmail" stylesheets="@viewlogin.css" text="conectcar com o Email" />
+      <ImageView fitHeight="23.0" fitWidth="32.0" layoutX="533.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/iconEmail2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="788.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/iconON_OF.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtUsuario" layoutX="490.0" layoutY="151.0" prefHeight="25.0" prefWidth="275.0" promptText="Usuario" styleClass="txtfilder" stylesheets="@viewlogin.css" />
+      <TextField fx:id="txtSenha" layoutX="490.0" layoutY="200.0" prefHeight="25.0" prefWidth="275.0" promptText="Senha" styleClass="txtfilder" stylesheets="@viewlogin.css" />
+   </children>
+</AnchorPane>
