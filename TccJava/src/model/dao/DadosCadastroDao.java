@@ -1,8 +1,9 @@
 package model.dao;
 
-import coltrol.Conexao;
+import connection.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.bean.DadosCadastro;
 
@@ -17,14 +18,14 @@ public class DadosCadastroDao {
     
         try{
             con  = (Connection) new Conexao().getConnection();
-            String sql = "insert into login (usuario_id, nome, email, usuario, senha, telefone, data_cadastro) values (default, ?, ?, ?, ?, ?, ?)";
+            String sql = "insert into login (usuario_id, nome, email, usuario, senha, telefone, data_cadastro) values (default, '?', '?', '?', md5('?'), '?', now());";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, dC.getNome());
             stmt.setString(2, dC.getEmail());
             stmt.setString(3, dC.getUsuario());
             stmt.setString(4, dC.getSenha());
             stmt.setString(5, dC.getTelefone());
-            stmt.setDate(6, (java.sql.Date) dC.getDataTime());
+            //stmt.setDate(6, (java.sql.Date) dC.getDataTime());
             stmt.execute();
             stmt.close();
             inseriu = true;  
@@ -45,7 +46,10 @@ public class DadosCadastroDao {
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, usuario);
             stmt.setString(2, senha);
-            stmt.execute();
+            ResultSet rs = stmt.executeQuery();
+            if((usuario == rs.getString("usuario")) && senha == rs.getString("senha")){
+                inseriu = true; 
+            }
             stmt.close();
             inseriu = true;
         }catch(Exception ex){

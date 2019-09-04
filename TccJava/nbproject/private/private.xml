@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabri/Pictures/TccJava/src/view/login/ViewLogin.fxml</file>
-            <file>file:/C:/Users/gabri/Pictures/TccJava/src/tccjava/TccJava.java</file>
+            <file>file:/C:/Users/gabri/Desktop/TCCJajaFx/TccJava/src/coltrol/ControlaDadosCadastro.java</file>
+            <file>file:/C:/Users/gabri/Desktop/TCCJajaFx/TccJava/src/view/login/ViewLoginController.java</file>
+            <file>file:/C:/Users/gabri/Desktop/TCCJajaFx/TccJava/src/model/dao/DadosCadastroDao.java</file>
+            <file>file:/C:/Users/gabri/Desktop/TCCJajaFx/TccJava/src/tccjava/TccJava.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,4 +1,4 @@
-package tccjava;
+    package tccjava;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -28,12 +28,6 @@ public class TccJava extends Application {
         
         Parent root = FXMLLoader.load(getClass().getResource("/view/login/ViewLogin.fxml"));
         Scene scene = new Scene(root);
-        
-
-
-
-        
-      
         
         
         //primaryStage.setTitle("Login");
