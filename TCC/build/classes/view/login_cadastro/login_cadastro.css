@@ -1,0 +1,45 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.butoon{
+    -fx-font-size: 12px;
+    -fx-background-color: #FFF;
+    -fx-border-color: none;
+        
+    -fx-text-fill: rgba(0,0,0,0.5);
+    -fx-padding: 0;
+    -fx-border-radius: 5,5,5,5;
+    -fx-background-radius: 5,5,5,5; 
+}
+.butoon:hover{
+    -fx-background-color:  #093dfe;
+    -fx-text-fill: FFF;
+}
+.butoonEmail{
+    -fx-font-size: 12px;
+    -fx-background-color: A3A8AB;
+    -fx-border-color: none;
+        
+    -fx-text-fill: FFF;
+    -fx-padding: 0;
+    -fx-border-radius: 5,5,5,5;
+    -fx-background-radius: 5,5,5,5;
+    
+}
+.butoonEmail:hover{
+    -fx-background-color:  #093dfe;
+}
+
+.txtfilder{
+    -fx-border-color: #FFF;
+    -fx-border-radius:5,5,5,5;
+    
+    
+}
+.txtfilder:visited{
+  -fx-border-color:  #093dfe; 
+}
