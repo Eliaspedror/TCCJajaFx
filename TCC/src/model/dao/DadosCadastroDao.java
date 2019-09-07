@@ -39,19 +39,19 @@ public class DadosCadastroDao {
     }
     public boolean login(String usuario, String senha) throws SQLException, ClassNotFoundException{
         boolean inseriu = false;
-
+        ResultSet rs = null;
         try{
             con = new Conexao().getConnection();
-            String sql = "select usuario, senha from login where usuario = '?' and senha = md5('?');";
+            //String sql = "select usuario, senha from login where usuario = '"+ usuario + "' and senha = md5('"+senha+"');";
+            String sql = "select usuario, senha from login where usuario = ? and senha = md5(?)";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, usuario);
             stmt.setString(2, senha);
-            ResultSet rs = stmt.executeQuery();
-            if((usuario == rs.getString("usuario")) && senha == rs.getString("senha")){
+            rs = stmt.executeQuery();
+            if(rs.next()){
                 inseriu = true; 
             }
             stmt.close();
-            inseriu = true;
         }catch(Exception ex){
             ex.printStackTrace();
         }finally{

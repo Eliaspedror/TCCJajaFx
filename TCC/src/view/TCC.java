@@ -7,21 +7,24 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * @author gabri
- */
+
+
 public class TCC extends Application {
-          
+    
+    private Scene rootHomew;
+    private Stage stage;
+    
     @Override
     public void start(Stage stage) throws Exception {
         
-        
-        
+        this.stage = stage;
+
         Parent root = FXMLLoader.load(getClass().getResource("login_cadastro/Login_Cadastro.fxml"));
+        Parent rootHome = FXMLLoader.load(getClass().getResource("home/ViewHome.fxml"));
         
-        Scene scene = new Scene(root);
+        rootHomew = new Scene(rootHome);
         
+        Scene scene = new Scene(root);        
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
@@ -32,6 +35,10 @@ public class TCC extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    public void telaRootHome(){
+        stage.setScene(this.rootHomew);
     }
     
 }

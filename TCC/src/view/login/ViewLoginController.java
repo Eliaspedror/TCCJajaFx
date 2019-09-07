@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -51,13 +52,17 @@ public class ViewLoginController implements Initializable {
     @FXML
     void login(ActionEvent event) throws ClassNotFoundException {
         boolean inseriu = false;
+        System.out.println("Entrou aqui");
+
         try{
             inseriu = ctrlCadastro.login(this.txtUsuario.getText(), this.txtSenha.getText());
         }catch(SQLException ex){
             ex.printStackTrace();
         }
-        if(inseriu){
-            System.out.println("bem vindo!");
+        if(inseriu == false){
+            System.out.println("entrou");
+        }else{
+            System.out.println("Não entrou");
         }
     }
     
