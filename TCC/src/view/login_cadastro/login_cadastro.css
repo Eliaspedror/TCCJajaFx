@@ -33,13 +33,3 @@
 .butoonEmail:hover{
     -fx-background-color:  #093dfe;
 }
-
-.txtfilder{
-    -fx-border-color: #FFF;
-    -fx-border-radius:5,5,5,5;
-    
-    
-}
-.txtfilder:visited{
-  -fx-border-color:  #093dfe; 
-}

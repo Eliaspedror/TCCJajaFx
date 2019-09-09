@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.home.ViewHomeController">
+<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.home.ViewHomeController">
    <children>
       <AnchorPane layoutY="-1.0" prefHeight="462.0" prefWidth="264.0" style="-fx-background-color: #0747ae;;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -126,5 +126,32 @@
             </AnchorPane>
          </children>
       </AnchorPane>
+      <JFXButton fx:id="btnMinimizar" alignment="CENTER" contentDisplay="CENTER" layoutX="644.0" layoutY="6.0" onAction="#minimizar" prefHeight="40.0" prefWidth="44.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/minimizar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnMaximizar" alignment="CENTER" contentDisplay="CENTER" layoutX="695.0" layoutY="6.0" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/maximizar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnFechar" alignment="CENTER" contentDisplay="CENTER" layoutX="734.0" layoutY="6.0" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/fechar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

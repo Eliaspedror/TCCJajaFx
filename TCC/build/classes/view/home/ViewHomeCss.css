@@ -1,0 +1,19 @@
+
+
+.mainFxmlClass {
+
+}
+.butoon{
+    -fx-background-color: #FFF;
+}
+.butoon:hover{
+    -fx-background-color: #E0E0E0;
+}
+
+.butoonx{
+    -fx-background-color: #FFF;
+}
+.butoonx:hover{
+    -fx-background-color: #FD4E4E;
+}
+

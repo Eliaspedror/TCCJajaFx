@@ -29,7 +29,16 @@ public class DadosCadastro{
     }
     
     public DadosCadastro() {
-       
+        
+    }
+
+    public DadosCadastro(String usuario, String senha, String nome, String email, String telefone) {
+        this.setUsuario(usuario);
+        this.setSenha(senha);
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setTelefone(telefone);
+        this.setDataTime(new Date());
     }
     
     //Getters e Setters

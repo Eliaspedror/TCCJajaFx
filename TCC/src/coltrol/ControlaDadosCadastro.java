@@ -9,8 +9,8 @@ import model.dao.DadosCadastroDao;
  * @author 
  */
 public class ControlaDadosCadastro {
-    public boolean insereCadastro(String usuario, String senha, int usuario_id, String nome, String email, String telefone) throws SQLException, ClassNotFoundException{
-        DadosCadastro dC = new DadosCadastro(usuario, senha, usuario_id, nome, email, telefone);
+    public boolean insereCadastro(String usuario, String senha, String nome, String email, String telefone) throws SQLException, ClassNotFoundException{
+        DadosCadastro dC = new DadosCadastro(usuario, senha, nome, email, telefone);
         DadosCadastroDao dCDAO = new DadosCadastroDao();
         boolean inseriu = dCDAO.inserir(dC);
         return inseriu;

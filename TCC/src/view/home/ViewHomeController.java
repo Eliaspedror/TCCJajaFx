@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import view.TCC;
 
 /**
  *
@@ -27,6 +28,33 @@ public class ViewHomeController implements Initializable {
     private JFXButton btnRemove;
    
    @FXML
+    private JFXButton btnMinimizar;
+
+   @FXML
+   private JFXButton btnMaximizar;
+
+   @FXML
+   private JFXButton btnFechar;
+   
+   
+   
+   
+   @FXML
+   void maximizar(ActionEvent event) {
+       TCC.maximizar();
+   }
+
+   @FXML
+   void minimizar(ActionEvent event) {
+      TCC.minimizar();
+   }
+   
+   @FXML
+   void fechar(ActionEvent event) {
+       TCC.fechar();
+   } 
+   
+   @FXML
     void remove(ActionEvent event) {
         addPane.setVisible(false);
     }
@@ -38,6 +66,5 @@ public class ViewHomeController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }    
-    
+    }     
 }
