@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.login_cadastro.Login_CadastroController">
    <children>
-      <AnchorPane fx:id="paneCadastro" prefHeight="506.0" prefWidth="854.0" style="-fx-background-color: #fff;">
+      <AnchorPane fx:id="paneCadastro" prefHeight="506.0" prefWidth="854.0" style="-fx-background-color: #fff;" visible="false">
          <children>
             <AnchorPane layoutX="439.0" prefHeight="506.0" prefWidth="416.0" style="-fx-background-color: #093dfe;;">
                <children>
@@ -75,7 +75,6 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="btnCadastrar" layoutX="260.0" layoutY="450.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="86.0" styleClass="butoonEmail" stylesheets="@../cadastro/viewcadastro.css" text="Cadastrar" />
             <ImageView fitHeight="68.0" fitWidth="86.0" layoutX="179.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/iconCalender1.png" />
@@ -93,9 +92,10 @@
             <JFXPasswordField fx:id="txtSenha1" layoutX="83.0" layoutY="319.0" prefHeight="25.0" prefWidth="123.0" unFocusColor="#bbaeae" />
             <JFXPasswordField fx:id="txtSenha2" layoutX="230.0" layoutY="319.0" prefHeight="25.0" prefWidth="123.0" unFocusColor="#bbaeae" />
             <JFXTextField fx:id="txtTelefone" layoutX="83.0" layoutY="384.0" prefHeight="25.0" prefWidth="267.0" promptText="E-mal" style="-fx-prompt-text-fill: #bbaeae;" unFocusColor="#bbaeae" />
+            <JFXButton fx:id="btnCadastrar" layoutX="267.0" layoutY="456.0" onAction="#cadastrar" prefHeight="25.0" prefWidth="86.0" styleClass="butoonEmail" stylesheets="@login_cadastro.css" text="Cadastrar" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneLogin" prefHeight="506.0" prefWidth="842.0" style="-fx-background-color: #fff;" visible="false">
+      <AnchorPane fx:id="paneLogin" prefHeight="506.0" prefWidth="842.0" style="-fx-background-color: #fff;">
          <children>
             <AnchorPane prefHeight="506.0" prefWidth="416.0" style="-fx-background-color: #093dfe;" />
             <Label layoutX="187.0" layoutY="216.0" text="AMGEN" textFill="WHITE">
@@ -118,7 +118,6 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="509.0" layoutY="396.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="275.0" styleClass="butoonEmail" stylesheets="@../login/viewlogin.css" text="conectcar com o Email" />
             <Button fx:id="btnIrcadastro" layoutX="427.0" layoutY="466.0" mnemonicParsing="false" onAction="#vaiTelaCadastro" style="-fx-background-color: #fff;" text="CADASTRE-SE" textFill="#5484ff">
                <font>
                   <Font size="11.0" />
@@ -140,7 +139,6 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="btnEntrar" layoutX="698.0" layoutY="297.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="86.0" styleClass="butoon" stylesheets="@../login/viewlogin.css" text="Entrar" />
             <Button layoutX="491.0" layoutY="297.0" mnemonicParsing="false" style="-fx-background-color: #fff;" text="Esqueceu a senha?" textFill="#5484ff" />
             <JFXButton fx:id="btnExit" contentDisplay="CENTER" layoutX="803.0" layoutY="14.0" onAction="#exit" prefHeight="17.0" prefWidth="33.0" text=" " textOverrun="CLIP">
                <graphic>
@@ -153,6 +151,8 @@
             </JFXButton>
             <JFXPasswordField fx:id="txtSenha" layoutX="509.0" layoutY="239.0" prefHeight="25.0" prefWidth="275.0" promptText="Senha" style="-fx-prompt-text-fill: #bbaeae;" unFocusColor="#bbaeae" />
             <JFXTextField fx:id="txtUsuario" layoutX="509.0" layoutY="182.0" prefHeight="25.0" prefWidth="275.0" promptText="Usuário" style="-fx-prompt-text-fill: #bbaeae;" unFocusColor="#bbaeae" />
+            <JFXButton fx:id="btnEntrar" layoutX="699.0" layoutY="297.0" onAction="#login" prefHeight="25.0" prefWidth="85.0" styleClass="butoon" stylesheets="@login_cadastro.css" text="Entrar" />
+            <JFXButton layoutX="508.0" layoutY="400.0" prefHeight="25.0" prefWidth="275.0" styleClass="butoonEmail" stylesheets="@login_cadastro.css" text="Button" />
          </children>
       </AnchorPane>
    </children>

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.home.ViewHomeController">
+<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.agenda.AgendaController">
    <children>
       <AnchorPane fx:id="paneHome" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -60,7 +60,7 @@
                         </JFXButton>
                      </children>
                   </AnchorPane>
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="63.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="Perfil" textFill="WHITE">
+                  <JFXButton fx:id="btnPerfil" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="63.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#vaiViewPerfil" prefHeight="40.0" prefWidth="185.0" text="Perfil" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="21.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -78,7 +78,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="btnAgenda" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="143.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#vaiViewAgenda" prefHeight="40.0" prefWidth="185.0" text="agenda" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="143.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="agenda" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -141,7 +141,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <JFXButton fx:id="btnMinimizar" alignment="CENTER" contentDisplay="CENTER" onAction="#minimizar" prefHeight="34.0" prefWidth="44.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="0.0">
+            <JFXButton fx:id="btnMinimizar" alignment="CENTER" contentDisplay="CENTER" onAction="#minimizar" prefHeight="34.0" prefWidth="44.0" styleClass="butoon" stylesheets="@../home/ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -150,7 +150,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnMaximizar" alignment="CENTER" contentDisplay="CENTER" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="0.0">
+            <JFXButton fx:id="btnMaximizar" alignment="CENTER" contentDisplay="CENTER" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@../home/ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -159,7 +159,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnFechar" alignment="CENTER" contentDisplay="CENTER" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <JFXButton fx:id="btnFechar" alignment="CENTER" contentDisplay="CENTER" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@../home/ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -168,7 +168,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label layoutX="457.0" layoutY="170.0" text="Tela Perfil">
+            <Label layoutX="473.0" layoutY="179.0" text="Tela Agenda">
                <font>
                   <Font name="System Bold Italic" size="36.0" />
                </font>
@@ -204,7 +204,7 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <JFXButton fx:id="btnMinimizar1" alignment="CENTER" contentDisplay="CENTER" layoutX="645.0" layoutY="-3.0" onAction="#minimizar" prefHeight="34.0" prefWidth="44.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="0.0">
+            <JFXButton fx:id="btnMinimizar1" alignment="CENTER" contentDisplay="CENTER" layoutX="645.0" layoutY="-3.0" onAction="#minimizar" prefHeight="34.0" prefWidth="44.0" styleClass="butoon" stylesheets="@../home/ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -213,7 +213,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnMaximizar1" alignment="CENTER" contentDisplay="CENTER" layoutX="689.0" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="0.0">
+            <JFXButton fx:id="btnMaximizar1" alignment="CENTER" contentDisplay="CENTER" layoutX="689.0" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@../home/ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -222,7 +222,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnFechar1" alignment="CENTER" contentDisplay="CENTER" layoutX="735.0" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <JFXButton fx:id="btnFechar1" alignment="CENTER" contentDisplay="CENTER" layoutX="735.0" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@../home/ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>

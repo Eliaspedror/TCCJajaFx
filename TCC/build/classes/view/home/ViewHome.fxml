@@ -3,99 +3,179 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.home.ViewHomeController">
+<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.home.ViewHomeController">
    <children>
-      <AnchorPane layoutY="-1.0" prefHeight="462.0" prefWidth="264.0" style="-fx-background-color: #0747ae;;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="paneHome" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutY="-6.0" prefHeight="469.0" prefWidth="56.0" style="-fx-background-color: #0741ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane prefHeight="462.0" prefWidth="264.0" style="-fx-background-color: #0747ae;;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="366.0" prefHeight="40.0" prefWidth="53.0" text="." textFill="#0747ae" textOverrun="CLIP" wrapText="true" />
-                  <JFXButton fx:id="btnAdd" accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutX="1.0" layoutY="102.0" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="56.0" text="  " textFill="WHITE" wrapText="true">
+                  <AnchorPane layoutY="-6.0" prefHeight="469.0" prefWidth="56.0" style="-fx-background-color: #0741ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="366.0" prefHeight="40.0" prefWidth="53.0" text="." textFill="#0747ae" textOverrun="CLIP" wrapText="true" />
+                        <JFXButton fx:id="btnAdd" accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutX="1.0" layoutY="102.0" onAction="#addPane" prefHeight="40.0" prefWidth="56.0" text="  " textFill="WHITE" wrapText="true">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" text="" wrappingWidth="10.99998265504837" />
+                           </graphic>
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="62.0" prefHeight="40.0" prefWidth="57.0" text="  " textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" text="" wrappingWidth="14.99998265504837" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnOptions" accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="381.0" onAction="#options" prefHeight="40.0" prefWidth="56.0" text="   " textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="40.0">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/menu.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="2.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="421.0" prefHeight="40.0" prefWidth="56.0" text="  " textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font size="1.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/interrogacao.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="63.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="Perfil" textFill="WHITE">
                      <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" text="" wrappingWidth="10.99998265504837" />
-                     </graphic>
-                     <font>
-                        <Font size="1.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="62.0" prefHeight="40.0" prefWidth="57.0" text="  " textFill="WHITE" wrapText="true">
-                     <font>
-                        <Font size="1.0" />
-                     </font>
-                     <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" text="" wrappingWidth="14.99998265504837" />
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="381.0" prefHeight="40.0" prefWidth="56.0" text="   " textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="40.0">
-                     <graphic>
-                        <ImageView fitHeight="33.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="21.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/menu.png" />
+                              <Image url="@../img/perfil.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <font>
-                        <Font size="2.0" />
-                     </font>
                   </JFXButton>
-                  <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="421.0" prefHeight="40.0" prefWidth="56.0" text="  " textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
-                     <font>
-                        <Font size="1.0" />
-                     </font>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="54.0" layoutY="103.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="grupos" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="17.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/interrogacao.png" />
+                              <Image url="@../img/Grupos.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
+                  <JFXButton fx:id="btnAgenda" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="143.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#vaiViewAgenda" prefHeight="40.0" prefWidth="185.0" text="agenda" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/calendario.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="184.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="novo grupo" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/grupos%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <AnchorPane fx:id="paneOptions" layoutX="65.0" layoutY="242.0" prefHeight="178.0" prefWidth="185.0" style="-fx-background-color: #fff; -fx-background-radius: 0.5em;" visible="false" AnchorPane.bottomAnchor="25.0">
+                     <children>
+                        <Label layoutX="22.0" layoutY="6.0" text="Configurações">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="13.0" layoutY="38.0" text="Mensagens">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="113.0" text="Eventos" />
+                        <Label layoutX="20.0" layoutY="130.0" text="Lembretes" />
+                        <Label layoutX="11.0" layoutY="147.0" text="Notícias">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="96.0" prefHeight="17.0" prefWidth="63.0" text="Progamas">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="45.0" layoutY="62.0" text="Recados não lidos ">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="32.0" fitWidth="20.0" layoutX="1.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/agendaConfig.png" />
+                           </image>
+                        </ImageView>
+                        <FontAwesomeIconView glyphName="BOOKMARK_ALT" layoutX="28.0" layoutY="74.0" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_LEFT" layoutX="-9.0" layoutY="152.0" size="15" wrappingWidth="20.000001311302185" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="101.0" layoutY="27.0" text="AMGEN" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
-            <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="63.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="Perfil" textFill="WHITE">
+            <JFXButton fx:id="btnMinimizar" alignment="CENTER" contentDisplay="CENTER" onAction="#minimizar" prefHeight="34.0" prefWidth="44.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="0.0">
                <graphic>
-                  <ImageView fitHeight="21.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/perfil.png" />
+                        <Image url="@../img/minimizar.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" layoutX="54.0" layoutY="103.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="grupos" textFill="WHITE">
+            <JFXButton fx:id="btnMaximizar" alignment="CENTER" contentDisplay="CENTER" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="0.0">
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/Grupos.png" />
+                        <Image url="@../img/maximizar.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="143.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="agenda" textFill="WHITE">
+            <JFXButton fx:id="btnFechar" alignment="CENTER" contentDisplay="CENTER" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <graphic>
-                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/calendario.png" />
+                        <Image url="@../img/fechar.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="184.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="novo grupo" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/grupos%20(2).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
+            <Label layoutX="457.0" layoutY="170.0" text="Tela Perfil">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="addPane" cache="true" depthTest="DISABLE" prefHeight="447.0" prefWidth="777.0" style="-fx-background-color: Silver;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="addPane" cache="true" depthTest="DISABLE" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="445.0" prefWidth="264.0" style="-fx-background-color: #fff;;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -124,34 +204,39 @@
                   </JFXButton>
                </children>
             </AnchorPane>
+            <JFXButton fx:id="btnMinimizar1" alignment="CENTER" contentDisplay="CENTER" layoutX="645.0" layoutY="-3.0" onAction="#minimizar" prefHeight="34.0" prefWidth="44.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/minimizar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnMaximizar1" alignment="CENTER" contentDisplay="CENTER" layoutX="689.0" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/maximizar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnFechar1" alignment="CENTER" contentDisplay="CENTER" layoutX="735.0" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/fechar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="472.0" layoutY="230.0" text="Outra tela ">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnMinimizar" alignment="CENTER" contentDisplay="CENTER" layoutX="644.0" layoutY="6.0" onAction="#minimizar" prefHeight="40.0" prefWidth="44.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="0.0">
-         <graphic>
-            <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/minimizar.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="btnMaximizar" alignment="CENTER" contentDisplay="CENTER" layoutX="695.0" layoutY="6.0" onAction="#maximizar" prefHeight="32.0" prefWidth="38.0" styleClass="butoon" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="0.0">
-         <graphic>
-            <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/maximizar.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="btnFechar" alignment="CENTER" contentDisplay="CENTER" layoutX="734.0" layoutY="6.0" onAction="#fechar" prefHeight="32.0" prefWidth="38.0" styleClass="butoonx" stylesheets="@ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <graphic>
-            <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/fechar.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
    </children>
 </AnchorPane>

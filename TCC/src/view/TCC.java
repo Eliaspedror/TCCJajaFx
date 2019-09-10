@@ -12,7 +12,8 @@ import javafx.stage.StageStyle;
 
 public class TCC extends Application {
     
-    private static Scene rootHomew;
+    private static Scene rootHomeR;
+    private static Scene rootAgendaR;
     private static Stage stage;
     
     @Override
@@ -26,18 +27,32 @@ public class TCC extends Application {
         
         //Home
         Parent rootHome = FXMLLoader.load(getClass().getResource("home/ViewHome.fxml"));
-        rootHomew = new Scene(rootHome, 800, 550);
+        rootHomeR = new Scene(rootHome, 800, 550);
          
+        //Agenda 
+        Parent rootAgenda = FXMLLoader.load(getClass().getResource("agenda/Agenda.fxml"));
+        rootAgendaR = new Scene(rootAgenda, 800, 550);
         
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
 
+    //Métodos para a troca de Scene
     public static void telaRootHome(){
-        stage.setScene(TCC.rootHomew);
+        stage.setScene(TCC.rootHomeR);
         stage.centerOnScreen();
     }
+    
+    public static void telaRootAgenda(){
+        stage.setScene(TCC.rootAgendaR);
+        stage.centerOnScreen();
+    }
+    
+    
+    
+    
+    //Métodos minímizar, maximizar efechar
     
     public static void minimizar(){
         stage.setIconified(true);
@@ -60,6 +75,8 @@ public class TCC extends Application {
     public static void fechar(){
         stage.close();
     }
+  
+    //Main
     public static void main(String[] args) {
         launch(args);
     }

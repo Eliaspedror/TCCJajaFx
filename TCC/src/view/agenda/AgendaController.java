@@ -1,4 +1,4 @@
-package view.home;
+package view.agenda;
 
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
@@ -6,17 +6,16 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import view.TCC;
 
 /**
+ * FXML Controller class
  *
- * @author gabri
+ * @author 
  */
-public class ViewHomeController implements Initializable {
-    
+public class AgendaController implements Initializable {
+
     @FXML
     private AnchorPane panePai;
 
@@ -48,7 +47,7 @@ public class ViewHomeController implements Initializable {
     private AnchorPane paneHome;
    
    @FXML
-    private JFXButton btnAgenda;
+    private JFXButton btnPerfil;
    
    
    //Métodos minímizar, maximizar e fechar
@@ -91,13 +90,16 @@ public class ViewHomeController implements Initializable {
         } 
     }
     
-    // Vai para a view Agenda
+    //Vai para a view Perfil
     @FXML
-    void vaiViewAgenda(ActionEvent event) {
-        TCC.telaRootAgenda();
+    void vaiViewPerfil(ActionEvent event) {
+        TCC.telaRootHome();
     }
     
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }     
+        // TODO
+    }    
+    
 }
