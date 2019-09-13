@@ -13,7 +13,7 @@ import view.TCC;
 
 /**
  *
- * @author gabri
+ * @author Alexandre/Elias/Elzio
  */
 public class ViewHomeController implements Initializable {
     

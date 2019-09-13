@@ -4,14 +4,15 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.home.ViewHomeController">
+<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="521.0" prefWidth="1023.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.home.ViewHomeController">
    <children>
-      <AnchorPane fx:id="paneHome" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="paneHome" prefHeight="445.0" prefWidth="935.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="462.0" prefWidth="264.0" style="-fx-background-color: #0747ae;;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -168,11 +169,51 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label layoutX="457.0" layoutY="170.0" text="Tela Perfil">
+            <Separator layoutX="264.0" layoutY="55.0" prefHeight="2.0" prefWidth="514.0" AnchorPane.leftAnchor="263.0" AnchorPane.rightAnchor="0.0" />
+            <AnchorPane layoutX="276.0" layoutY="7.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="39.0" styleClass="fotoPerfil" stylesheets="@ViewHomeCss.css" />
+            <Label layoutX="436.0" layoutY="128.0" prefHeight="30.0" prefWidth="282.0" text="Elias Pedro Ribeiro">
                <font>
-                  <Font name="System Bold Italic" size="36.0" />
+                  <Font name="Cambria Italic" size="24.0" />
                </font>
             </Label>
+            <ImageView fitHeight="130.0" fitWidth="132.0" layoutX="296.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Elias1.png" />
+               </image></ImageView>
+            <Label layoutX="331.0" layoutY="18.0" prefHeight="3.0" prefWidth="156.0" text="Elias Pedro Ribeiro">
+               <font>
+                  <Font name="Cambria" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="276.0" layoutY="58.0" text="visão geral">
+               <font>
+                  <Font name="Corbel Light" size="13.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="436.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/grupos%20(3).png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="436.0" layoutY="185.0" prefHeight="17.0" prefWidth="27.0" text="2" />
+            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="474.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/calendario%20(2).png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="474.0" layoutY="185.0" prefHeight="17.0" prefWidth="27.0" text="1" />
+            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="519.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/grupos%20(4).png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="519.0" layoutY="185.0" prefHeight="17.0" prefWidth="27.0" text="4" />
+            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="564.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/amigos.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="564.0" layoutY="185.0" prefHeight="17.0" prefWidth="27.0" text="3" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="addPane" cache="true" depthTest="DISABLE" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

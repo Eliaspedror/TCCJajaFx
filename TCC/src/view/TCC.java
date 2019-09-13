@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.ImageViewBuilder;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -18,6 +20,7 @@ public class TCC extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+    
         
         this.stage = stage;
         
@@ -27,11 +30,11 @@ public class TCC extends Application {
         
         //Home
         Parent rootHome = FXMLLoader.load(getClass().getResource("home/ViewHome.fxml"));
-        rootHomeR = new Scene(rootHome, 800, 550);
+        rootHomeR = new Scene(rootHome, 1023, 521);
          
         //Agenda 
         Parent rootAgenda = FXMLLoader.load(getClass().getResource("agenda/Agenda.fxml"));
-        rootAgendaR = new Scene(rootAgenda, 800, 550);
+        rootAgendaR = new Scene(rootAgenda, 1023, 521);
         
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -61,13 +64,13 @@ public class TCC extends Application {
     public static void maximizar(){
         
    
-        if(stage.getHeight() <= 550){
+        if(stage.getHeight() <= 521){
             stage.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
             stage.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
             stage.centerOnScreen();
         }else{
-            stage.setHeight(550);
-            stage.setWidth(800);
+            stage.setHeight(521);
+            stage.setWidth(1023);
             stage.centerOnScreen();
         } 
     }

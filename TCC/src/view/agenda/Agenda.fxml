@@ -4,12 +4,13 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.agenda.AgendaController">
+<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="521.0" prefWidth="1023.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.agenda.AgendaController">
    <children>
       <AnchorPane fx:id="paneHome" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -173,6 +174,7 @@
                   <Font name="System Bold Italic" size="36.0" />
                </font>
             </Label>
+            <Separator layoutX="264.0" layoutY="53.0" prefHeight="4.0" prefWidth="759.0" AnchorPane.leftAnchor="265.0" AnchorPane.rightAnchor="0.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="addPane" cache="true" depthTest="DISABLE" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
