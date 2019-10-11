@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="521.0" prefWidth="1023.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.agenda.AgendaController">
+<AnchorPane id="AnchorPane" fx:id="panePai" prefHeight="547.0" prefWidth="1029.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.agenda.AgendaController">
    <children>
-      <AnchorPane fx:id="paneHome" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane id="paneAgenda" fx:id="paneAgenda" blendMode="SRC_ATOP" nodeOrientation="LEFT_TO_RIGHT" prefHeight="547.0" prefWidth="1029.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="462.0" prefWidth="264.0" style="-fx-background-color: #0747ae;;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -168,11 +174,179 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label layoutX="473.0" layoutY="179.0" text="Tela Agenda">
+            <Label layoutX="512.0" layoutY="13.0" prefHeight="32.0" prefWidth="175.0" text="Tela Agenda">
                <font>
-                  <Font name="System Bold Italic" size="36.0" />
+                  <Font name="System Bold Italic" size="27.0" />
                </font>
             </Label>
+            <Separator layoutX="264.0" layoutY="54.0" prefHeight="4.0" prefWidth="759.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="1.0" />
+            <AnchorPane layoutX="542.0" layoutY="55.0" prefHeight="492.0" prefWidth="487.0" style="-fx-background-color: #0768ae;">
+               <children>
+                  <VBox prefHeight="492.0" prefWidth="487.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="70.0" prefWidth="488.0">
+                           <children>
+                              <AnchorPane prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="25.0" text="D" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="25.0" text="S" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="26.0" text="T" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="25.0" text="Q" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="25.0" text="Q" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="25.0" text="S" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="25.0" text="S" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="487.0">
+                           <children>
+                              <JFXButton fx:id="btnC1" onAction="#eventoC1" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC2" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC3" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC4" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC5" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC6" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <Button fx:id="btnC7" mnemonicParsing="false" onAction="#eventoC7" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" text="Button" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="487.0">
+                           <children>
+                              <JFXButton fx:id="btnC8" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC9" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC10" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC11" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC12" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC13" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC14" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="487.0">
+                           <children>
+                              <JFXButton fx:id="btnC15" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC16" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC17" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC18" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC19" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC20" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC21" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="487.0">
+                           <children>
+                              <JFXButton fx:id="btnC22" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC23" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC24" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC25" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC26" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC27" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC28" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="487.0">
+                           <children>
+                              <JFXButton fx:id="btnC29" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC30" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC31" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC32" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC33" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC34" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC35" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="70.0" prefWidth="487.0">
+                           <children>
+                              <JFXButton fx:id="btnC36" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC37" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC38" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC39" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC40" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC41" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC42" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneAno" layoutX="328.0" layoutY="56.0" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #fff;" visible="false">
+               <children>
+                  <JFXComboBox fx:id="comboBoxSelecaoAno" layoutY="14.0" onAction="#selecionaAno" prefHeight="25.0" prefWidth="123.0" visibleRowCount="5" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneMes" layoutX="323.0" layoutY="56.0" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #fff;" visible="false">
+               <children>
+                  <JFXComboBox fx:id="comboBoxSelecaoMes" editable="true" layoutY="14.0" onAction="#selecionaMes" prefHeight="25.0" prefWidth="123.0" visibleRowCount="5" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="labelDe" cache="true" layoutX="380.0" layoutY="66.0" prefHeight="20.0" prefWidth="20.0" text="de">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnMes" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="284.0" layoutY="61.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#selecMes" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #fff;" text="Outubro">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAno" layoutX="400.0" layoutY="61.0" mnemonicParsing="false" onAction="#selecAno" style="-fx-background-color: #fff;" text="2019">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <JFXTreeTableView layoutX="264.0" layoutY="97.0" prefHeight="450.0" prefWidth="278.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="addPane" cache="true" depthTest="DISABLE" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
