@@ -108,7 +108,7 @@ public class AgendaController implements Initializable {
     private JFXButton btnC6;
 
     @FXML
-    private Button btnC7;
+    private JFXButton btnC7;
 
     @FXML
     private JFXButton btnC8;
@@ -223,6 +223,9 @@ public class AgendaController implements Initializable {
     
     @FXML
     private AnchorPane paneAno;
+    
+    @FXML
+    private AnchorPane paneCorTest;
 
    
    //Métodos minímizar, maximizar e fechar
@@ -684,18 +687,13 @@ public class AgendaController implements Initializable {
     }
     
     //Verificando o dia e setando a cor 
-    public void corDiaAtual(Button corDiaAtual, int i){
+    public void corDiaAtual(JFXButton corDiaAtual, int i){
         if(((i == diaFixo) && (mesAltera == mesFixo -1)) && (anoAltera == anoFixo)){
-            //Paint paint = Color.RED;
-            
-            //corDiaAtual.setTextFill((javafx.scene.paint.Paint) paint);
-            
-            //JOptionPane.showMessageDialog(null, "Red" + i);
+            corDiaAtual.setStyle("-fx-text-fill: black;"); 
+
             
         }else{
-            //Paint paint = Color.BLACK;
-            //corDiaAtual.setTextFill((javafx.scene.paint.Paint) paint);
-            //JOptionPane.showMessageDialog(null, "Black" + i);
+            corDiaAtual.setStyle("-fx-text-fill: #FFF;");
         }
     }
     
@@ -753,12 +751,10 @@ public class AgendaController implements Initializable {
     @FXML
     void eventoC7(ActionEvent event) {
         cadastra(btnC7);
+        String i = "RED";
+        paneCorTest.setStyle("-fx-background-color: "+ i +";");
     }
-    
-    
-    
-    
-     
+
     //verifica calendario e cadastra evento
     public void cadastra(Button btnDia){
         if(!btnDia.getText().equals("")){
