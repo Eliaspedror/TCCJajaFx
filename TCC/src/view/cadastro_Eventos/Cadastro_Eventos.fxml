@@ -1,14 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.cadastro_Eventos.Cadastro_EventosController">
+<AnchorPane id="AnchorPane" prefHeight="442.0" prefWidth="739.0" style="-fx-background-color: #FFF;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.cadastro_Eventos.Cadastro_EventosController">
     <stylesheets>
-        <URL value="@cadastro_eventos.css"/>
+        <URL value="@cadastro_eventos.css" />
     </stylesheets>
+   <children>
+      <Label layoutX="97.0" layoutY="46.0" text="Título" textFill="#5484ff">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField layoutX="144.0" layoutY="43.0" prefHeight="25.0" prefWidth="238.0" unFocusColor="#bbaeae" />
+      <AnchorPane prefHeight="552.0" prefWidth="64.0" style="-fx-background-color: #1b6cd7;">
+         <children>
+            <JFXButton layoutX="7.0" layoutY="14.0" onAction="#mudaTelaAgenda" prefHeight="37.0" prefWidth="46.0">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children></AnchorPane>
+      <AnchorPane layoutX="523.0" layoutY="312.0" prefHeight="69.0" prefWidth="107.0" style="-fx-background-color: #eae5e5;">
+         <children>
+            <Label layoutX="37.0" layoutY="1.0" text="min" textFill="#909090">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" layoutX="22.0" layoutY="18.0" prefHeight="37.0" prefWidth="64.0" promptText="00">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="397.0" layoutY="312.0" prefHeight="69.0" prefWidth="107.0" style="-fx-background-color: #eae5e5;">
+         <children>
+            <Label layoutX="41.0" layoutY="1.0" text="hrs" textFill="#909090">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" layoutX="23.0" layoutY="16.0" prefHeight="37.0" prefWidth="64.0" promptText="00">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <Label layoutX="300.0" layoutY="112.0" text="Endereço" textFill="#1b6cd7">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="112.0" text="Localização" textFill="#1b6cd7">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="160.0" text="Descrição" textFill="#1b6cd7">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="442.0" text="Final do Evento" textFill="#1b6cd7">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="347.0" text="Inicio do evento" textFill="#1b6cd7">
+         <font>
+            <Font name="Segoe UI" size="15.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="675.0" prefHeight="552.0" prefWidth="64.0" style="-fx-background-color: #1b6cd7;" />
+      <JFXTextField fx:id="txtCEP" alignment="CENTER" layoutX="184.0" layoutY="94.0" onAction="#buscaEndereco" prefHeight="37.0" prefWidth="89.0" promptText="Digite o CEP" unFocusColor="#bbaeae">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEndereco" layoutX="372.0" layoutY="94.0" prefHeight="37.0" prefWidth="257.0" unFocusColor="#bbaeae">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <TextArea layoutX="173.0" layoutY="160.0" prefHeight="130.0" prefWidth="454.0" />
+      <JFXDatePicker defaultColor="#1b6cd7" layoutX="219.0" layoutY="344.0" prefHeight="25.0" prefWidth="143.0" />
+      <JFXDatePicker defaultColor="#1b6cd7" layoutX="219.0" layoutY="439.0" prefHeight="25.0" prefWidth="143.0" />
+      <AnchorPane layoutX="397.0" layoutY="408.0" prefHeight="69.0" prefWidth="107.0" style="-fx-background-color: #eae5e5;">
+         <children>
+            <Label layoutX="41.0" layoutY="1.0" text="hrs" textFill="#909090">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" layoutX="22.0" layoutY="16.0" prefHeight="37.0" prefWidth="62.0" promptText="00">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="523.0" layoutY="408.0" prefHeight="69.0" prefWidth="107.0" style="-fx-background-color: #eae5e5;">
+         <children>
+            <Label layoutX="37.0" layoutY="1.0" text="min" textFill="#909090">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" layoutX="22.0" layoutY="16.0" prefHeight="37.0" prefWidth="64.0" promptText="00">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <JFXButton layoutX="99.0" layoutY="497.0" onAction="#cadastrarEventos" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #1b6cd7;" text="Cadastrar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
 </AnchorPane>

@@ -1,26 +1,31 @@
 package view.login_cadastro;
 
-import coltrol.ControlaDadosCadastro;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import java.awt.Frame;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javax.swing.JFrame;
+import model.Usuario;
 import view.TCC;
 
 /**
@@ -30,9 +35,7 @@ import view.TCC;
  */
 public class Login_CadastroController implements Initializable {
 
-    ControlaDadosCadastro controle = new ControlaDadosCadastro();
-   
-    
+ 
     @FXML
     private AnchorPane paneCadastro;
 
@@ -86,17 +89,54 @@ public class Login_CadastroController implements Initializable {
     
     
     
+    //Responsavel para armazenar o Codigo do Usuário ao fazer login
+    private static int codigoUsuario;
+    
+    public static int getCodigoUsuario() {
+        return codigoUsuario;
+    }
+    public static void setCodigoUsuario(int aCodigoUsuario) {
+        codigoUsuario = aCodigoUsuario;
+    }
+    ///////////
+    
     
     @FXML
     void login(ActionEvent event) throws SQLException, ClassNotFoundException {
-        boolean inseriu = false;
+        
+        URL rest;
         
         try{
-            inseriu = controle.login(this.txtUsuario.getText(), this.txtSenha.getText());
-            if(inseriu){
-                TCC.telaRootHome();
+            rest = new URL("http://143.106.241.1/cl18463/tcc/api/usuario/buscar/"+ this.txtUsuario.getText() + "/" + this.txtSenha.getText());
+            HttpURLConnection conexao = (HttpURLConnection) rest.openConnection();
+            
+            StringBuilder retorno = new StringBuilder();
+            
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(conexao.getInputStream()));
+            String linha;
+            while((linha = entrada.readLine()) != null){
+                retorno.append(linha);
+            }
+            entrada.close();
+            conexao.disconnect();
+            
+            Gson gson = new Gson();
+            JsonObject js = gson.fromJson(retorno.toString(), JsonObject.class);
+            JsonArray jsonArray = js.getAsJsonArray("dados");
+            
+            //verifica se o usuário existe 
+            if(jsonArray.size() > 0){
                 
-            }else if(!inseriu){
+                //pega o codigo do usuário
+                ArrayList<Usuario> usuario = null;
+                
+                Type usuarioListaType = new TypeToken<ArrayList<Usuario>>(){}.getType();
+                usuario = gson.fromJson(jsonArray, usuarioListaType);
+                
+                codigoUsuario = usuario.get(0).getCodigo();
+
+                TCC.telaRootHome(codigoUsuario); 
+            }else{
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setTitle("");
                 alert.setHeaderText("Usuário ou Senha inválido!");
@@ -104,18 +144,71 @@ public class Login_CadastroController implements Initializable {
 
                 alert.showAndWait();
             }
-        }catch(SQLException ex){
-            ex.printStackTrace();
-        }  
+            
+        }catch(MalformedURLException ex){
+            System.out.println("Erro: " + ex);
+        }catch(IOException ex){
+            System.out.println("Erro: " + ex);
+        }
     }
+    
+    
     
     @FXML
     void cadastrar(ActionEvent event){
 
         if(verificaCampos()){
-            boolean cadastro = false;
+            
+            URL rest;
             try{
-                cadastro = controle.insereCadastro(txtUsuario.getText(), txtSenha1.getText(), txtNome.getText(), txtEmail.getText(), txtTelefone.getText());
+                StringBuilder url = new StringBuilder("http://143.106.241.1/cl18463/tcc/api/usuario/inserir/");
+                url.append(txtNome.getText().replace(" ", "%20"));
+                url.append("/").append(txtUsuarioCa.getText());
+                url.append("/").append(txtEmail.getText());
+                url.append("/").append(txtSenha1.getText());
+                url.append("/").append(txtTelefone.getText());
+                rest = new URL(url.toString());
+                HttpURLConnection conexao = (HttpURLConnection) rest.openConnection();
+
+                StringBuilder retorno = new StringBuilder();
+                
+                BufferedReader entrada = new BufferedReader(new InputStreamReader(conexao.getInputStream()));
+                String linha;
+                while((linha = entrada.readLine()) != null){
+                    retorno.append(linha);
+                }
+                entrada.close();
+                conexao.disconnect();
+                
+                
+                Gson gson = new Gson();
+                JsonObject js = gson.fromJson(retorno.toString(), JsonObject.class);
+
+
+                if(Boolean.parseBoolean(js.get("dados").toString())){
+                    Alert alert = new Alert(AlertType.WARNING);
+                    alert.setTitle("");
+                    alert.setHeaderText("Cadastro efetuado com sucesso!");
+                    alert.showAndWait();
+                }else{
+                    Alert alert = new Alert(AlertType.WARNING);
+                    alert.setTitle("");
+                    alert.setHeaderText("Não foi possível realizar o cadastro, tente novamente!");
+                    alert.showAndWait();
+                }  
+                
+            } catch (MalformedURLException ex) { 
+                System.out.println("Erro: " + ex);
+            } catch (IOException ex) {
+                System.out.println("Erro: " + ex);
+            }
+            
+            
+            
+            
+            
+            /*try{
+                cadastro = controle.insereCadastro(, txtSenha1.getText(), , txtEmail.getText(), txtTelefone.getText());
             }catch(Exception ex){
                 ex.printStackTrace();
             }
@@ -124,7 +217,7 @@ public class Login_CadastroController implements Initializable {
                 alert.setTitle("");
                 alert.setHeaderText("Cadastro efetuado com sucesso!");
                 alert.showAndWait();
-            }
+            }*/
         }
         
     }
@@ -217,7 +310,7 @@ public class Login_CadastroController implements Initializable {
             return false;
         }else if(numeros < 2){
             Alert alert = new Alert(AlertType.WARNING);
-            alert.setHeaderText("É necessário no mínimo um caractere númerico!");
+            alert.setHeaderText("É necessário no mínimo dois caractere númerico!");
             alert.showAndWait();
             return false;
         }

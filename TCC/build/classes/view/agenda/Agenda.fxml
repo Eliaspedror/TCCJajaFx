@@ -2,12 +2,13 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,7 +24,6 @@
                <children>
                   <AnchorPane layoutY="-6.0" prefHeight="469.0" prefWidth="56.0" style="-fx-background-color: #0741ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <JFXButton accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutY="366.0" prefHeight="40.0" prefWidth="53.0" text="." textFill="#0747ae" textOverrun="CLIP" wrapText="true" />
                         <JFXButton fx:id="btnAdd" accessibleRole="PARENT" alignment="CENTER" blendMode="SRC_ATOP" cache="true" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" layoutX="1.0" layoutY="102.0" onAction="#addPane" prefHeight="40.0" prefWidth="56.0" text="  " textFill="WHITE" wrapText="true">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" text="" wrappingWidth="10.99998265504837" />
@@ -93,7 +93,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="184.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="novo grupo" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="56.0" layoutY="183.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="185.0" text="novo grupo" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -152,6 +152,10 @@
                         <AnchorPane prefHeight="2.0" prefWidth="69.0" />
                      </children>
                   </HBox>
+                  <JFXButton alignment="BASELINE_RIGHT" layoutX="57.0" layoutY="276.0" onAction="#mudaTelaCadastroEventos" prefHeight="40.0" prefWidth="206.0" style="-fx-background-color: #0747ae;" text="Novo" textFill="WHITE" />
+                  <JFXButton alignment="BASELINE_RIGHT" layoutX="59.0" layoutY="316.0" prefHeight="40.0" prefWidth="206.0" style="-fx-background-color: #0747ae;" text="Excluir" textFill="WHITE" />
+                  <JFXButton alignment="BASELINE_RIGHT" layoutX="57.0" layoutY="356.0" prefHeight="40.0" prefWidth="206.0" style="-fx-background-color: #0747ae;" text="Editar" textFill="WHITE" />
+                  <JFXButton alignment="BASELINE_RIGHT" layoutX="57.0" layoutY="396.0" prefHeight="40.0" prefWidth="206.0" style="-fx-background-color: #0747ae;" text="Visualizar" textFill="WHITE" />
                </children>
             </AnchorPane>
             <JFXButton fx:id="btnMinimizar" alignment="CENTER" contentDisplay="CENTER" onAction="#minimizar" prefHeight="34.0" prefWidth="44.0" styleClass="butoon" stylesheets="@../home/ViewHomeCss.css" text="  " textFill="WHITE" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="0.0">
@@ -260,13 +264,13 @@
                         </HBox>
                         <HBox prefHeight="70.0" prefWidth="487.0">
                            <children>
-                              <JFXButton fx:id="btnC1" onAction="#eventoC1" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
-                              <JFXButton fx:id="btnC2" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC3" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC4" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC5" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC6" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC7" onAction="#eventoC7" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC1" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC2" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC3" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC4" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC5" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC6" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC7" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
                            </children>
                         </HBox>
                         <HBox prefHeight="1.0" prefWidth="71.0" style="-fx-background-color: red;">
@@ -282,13 +286,13 @@
                         </HBox>
                         <HBox prefHeight="70.0" prefWidth="487.0">
                            <children>
-                              <JFXButton fx:id="btnC8" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
-                              <JFXButton fx:id="btnC9" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC10" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC11" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC12" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC13" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC14" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC8" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC9" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC10" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC11" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC12" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC13" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC14" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
                            </children>
                         </HBox>
                         <HBox prefHeight="1.0" prefWidth="71.0" style="-fx-background-color: red;">
@@ -304,13 +308,13 @@
                         </HBox>
                         <HBox prefHeight="70.0" prefWidth="487.0">
                            <children>
-                              <JFXButton fx:id="btnC15" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
-                              <JFXButton fx:id="btnC16" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC17" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC18" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC19" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC20" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC21" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC15" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC16" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC17" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC18" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC19" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC20" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC21" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
                            </children>
                         </HBox>
                         <HBox prefHeight="1.0" prefWidth="71.0" style="-fx-background-color: red;">
@@ -326,13 +330,13 @@
                         </HBox>
                         <HBox prefHeight="70.0" prefWidth="487.0">
                            <children>
-                              <JFXButton fx:id="btnC22" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
-                              <JFXButton fx:id="btnC23" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC24" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC25" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC26" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC27" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC28" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC22" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC23" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC24" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC25" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC26" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC27" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC28" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
                            </children>
                         </HBox>
                         <HBox prefHeight="1.0" prefWidth="71.0" style="-fx-background-color: red;">
@@ -348,13 +352,13 @@
                         </HBox>
                         <HBox prefHeight="70.0" prefWidth="487.0">
                            <children>
-                              <JFXButton fx:id="btnC29" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
-                              <JFXButton fx:id="btnC30" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC31" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC32" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC33" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC34" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC35" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC29" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC30" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC31" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC32" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC33" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC34" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC35" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
                            </children>
                         </HBox>
                         <HBox prefHeight="1.0" prefWidth="71.0" style="-fx-background-color: red;">
@@ -370,13 +374,13 @@
                         </HBox>
                         <HBox prefHeight="70.0" prefWidth="487.0">
                            <children>
-                              <JFXButton fx:id="btnC36" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
-                              <JFXButton fx:id="btnC37" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC38" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC39" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC40" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC41" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
-                              <JFXButton fx:id="btnC42" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC36" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="RED" />
+                              <JFXButton fx:id="btnC37" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC38" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC39" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC40" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC41" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
+                              <JFXButton fx:id="btnC42" onAction="#eventosdoDia" prefHeight="69.0" prefWidth="71.0" style="-fx-background-color: #0768ae;" textFill="WHITE" />
                            </children>
                         </HBox>
                         <HBox prefHeight="1.0" prefWidth="71.0" style="-fx-background-color: red;">
@@ -419,7 +423,11 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <JFXTreeTableView layoutX="264.0" layoutY="97.0" prefHeight="450.0" prefWidth="278.0" />
+            <TableView fx:id="tabelaEventosDoDia" layoutX="265.0" layoutY="95.0" prefHeight="452.0" prefWidth="278.0">
+              <columns>
+                <TableColumn fx:id="tbcTitulo" prefWidth="277.0" text="Tutulo" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="addPane" cache="true" depthTest="DISABLE" prefHeight="445.0" prefWidth="777.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
